@@ -103,4 +103,7 @@ curl -s https://dl.k8s.io/release/stable-1.33.txt
 | v1.36 release info | [kubernetes.dev/resources/release/](https://www.kubernetes.dev/resources/release/) |
 | v1.36 schedule (GitHub) | [sig-release/releases/release-1.36](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.36) |
 | All release notes | [github.com/kubernetes/kubernetes/releases](https://github.com/kubernetes/kubernetes/releases) |
+| Release notes filter | [relnotes.k8s.io](https://relnotes.k8s.io) — filter by version, SIG, and kind |
+| KEP shortcut | `kep.k8s.io/{number}` — jumps to the tracking issue for any KEP |
+| KEP browser | [kubernetes.dev/resources/keps/](https://kubernetes.dev/resources/keps/) — searchable KEP table |
 | End-of-life tracker | [endoflife.date/kubernetes](https://endoflife.date/kubernetes) |

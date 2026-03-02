@@ -71,6 +71,15 @@ These issues are curated by the SIGs specifically for newcomers. They are:
 - **Labels:** Bots apply labels automatically. Reviewers use `/lgtm` and `/approve` commands.
 - **CI:** Automated tests run on every PR. All tests must pass before merge.
 - **Review:** SIG members review PRs. Be patient — reviewers are volunteers.
+- **Bot commands reference:** [go.k8s.io/bot-commands](https://go.k8s.io/bot-commands) — full list of Prow bot commands (`/assign`, `/sig`, `/kind`, `/lgtm`, `/approve`, etc.)
+
+### Filing a bug (not a PR):
+1. Go to [github.com/kubernetes/kubernetes/issues/new/choose](https://github.com/kubernetes/kubernetes/issues/new/choose) → select "Bug Report"
+2. Fill the structured form (what happened, reproduction steps, K8s version)
+3. Prow bot applies `kind/bug` + `needs-triage` automatically
+4. A SIG triager routes it with `/sig <name>`
+
+**Security vulnerabilities** must be reported privately at [kubernetes.io/security](https://kubernetes.io/security) — never through public issues.
 
 ---
 

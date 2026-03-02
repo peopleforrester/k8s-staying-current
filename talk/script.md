@@ -21,7 +21,7 @@
 | Act | Theme | Time |
 |-----|-------|------|
 | **Act 1** — "I Passed. Now What?" | Mumshad sets up the problem. Certified, proud, immediately lost. Michael explains why — the cert is a snapshot, not a subscription. | 5 min |
-| **Act 2** — "Show Me How This Works" | Progressively deeper questions. How does K8s ship? Who decides what goes in? Where do I find what changed? Each answer builds the mental model. | 8 min |
+| **Act 2** — "Show Me How This Works" | Progressively deeper questions. How does K8s ship? Who decides what goes in? How do I trace a feature? How do I report a bug? Each answer builds the mental model. | 10 min |
 | **Act 3** — "Make It Actionable" | Mumshad gets practical. What do I subscribe to? I don't have time. I want to contribute. Michael gives the system, tools, and specific next steps — including events at KubeCon this week. | 5 min |
 | **Close + QR Code** | Both speakers summarize. Everything goes in the repo. Audience scans the code. | 2 min |
 
@@ -75,7 +75,7 @@ v1.32? That went end of life February 28th. Three weeks ago. If you studied on v
 ---
 
 ### SCENE 3: "Who Actually Runs Kubernetes?"
-**Time: 2:30**
+**Time: 2:00**
 **SLIDE:** SIG structure diagram — "24 SIGs Own Everything" with examples
 
 ```
@@ -97,11 +97,11 @@ CNCF is the landlord. Kubernetes arranges its own furniture.
 
 **Michael:** Neither. It's 24 Special Interest Groups — SIGs. Each SIG owns a specific area of the project. SIG Network owns all the networking code. SIG Node owns the kubelet. SIG Auth owns RBAC and authentication.
 
-And here's the mental model that matters: **CNCF is the landlord. Kubernetes arranges its own furniture.** The CNCF provides the infrastructure — the CI/CD, the legal entity, the conference you're sitting in right now. But it doesn't tell the SIGs what code to write. That comes from within the community.
+And here's the mental model that matters: **CNCF is the landlord. Kubernetes arranges its own furniture.** The CNCF provides the infrastructure — the CI/CD, the legal entity, the conference you're sitting in right now. But it doesn't tell the SIGs what code to write.
 
 **Mumshad:** Wait, I thought there were 21 SIGs?
 
-**Michael:** There were. Older docs are wrong. It's 24 now. The newest is SIG etcd, established November 2023. And these SIGs report to a 7-person Steering Committee — 4 new members were elected just last November. There's also an 11-person Technical Oversight Committee, or TOC, but the TOC handles project acceptance and maturity ratings — it doesn't tell Kubernetes what to build.
+**Michael:** Older docs are wrong. It's 24 now. The newest is SIG etcd, established November 2023. Every SIG — with Slack channels, meeting times, and current chairs — is in the repo.
 
 ---
 
@@ -130,10 +130,12 @@ And in May 2025, they restructured from 8 TAGs down to 5. TAG App Delivery, TAG 
 
 The five current TAGs are: Developer Experience, Infrastructure, Operational Resilience, Security and Compliance, and Workloads Foundation.
 
+And TAGs actually produce concrete things. TAG Security and Compliance, for example — they do security assessments for 50+ CNCF projects, they published the Cloud Native Security Whitepaper, and they're running the 2026 Security Slam right now through March 20th. SIGs write Go and merge PRs. TAGs write white papers and evaluate projects for the TOC.
+
 ---
 
 ### SCENE 5: "How Do Features Actually Ship?"
-**Time: 1:30**
+**Time: 1:00**
 **SLIDE:** KEP lifecycle — Alpha → Beta → Stable
 
 ```
@@ -148,21 +150,99 @@ v1.35 shipped 60 enhancements:
   17 Stable | 19 Beta | 22 Alpha
 
 Track them: github.com/kubernetes/enhancements
+Shortcut: kep.k8s.io/{number}  |  Filter: relnotes.k8s.io
 ```
 
 **Mumshad:** OK, so SIGs own the code. But how do new features actually get in?
 
-**Michael:** Through KEPs — Kubernetes Enhancement Proposals. A KEP starts as an idea, goes through Alpha where it's off by default, then Beta where it's on by default, then Stable which is GA — production-ready.
-
-v1.35 shipped 60 enhancements: 17 went Stable, 19 went Beta, 22 new Alphas. In-Place Pod Resize — being able to change resource limits without restarting the pod — that went GA in v1.35. That's a big deal.
-
-**Mumshad:** Where do I track these?
-
-**Michael:** github.com/kubernetes/enhancements. Every KEP is there. And the release blog post summarizes all of them — that's why I keep saying, read the blog.
+**Michael:** Through KEPs — Kubernetes Enhancement Proposals. A KEP starts as an idea, goes through Alpha, Beta, then Stable — which is GA, production-ready. v1.35 shipped 60 enhancements: 17 went Stable, 19 Beta, 22 new Alphas. Let me show you how to trace one.
 
 ---
 
-### SCENE 6: "Half My Bookmarks Are Broken"
+### SCENE 6: "Trace It — KEP-1287"
+**Time: 1:30**
+**SLIDE:** KEP-1287 In-Place Pod Resize walkthrough
+
+```
+TRACE IT: KEP-1287
+In-Place Update of Pod Resources
+
+1  Search the KEP table
+   kubernetes.dev/resources/keps/ → search "pod resize"
+
+2  Read the kep.yaml
+   keps/sig-node/1287-in-place-update-pod-resources/kep.yaml
+
+3  Check the tracking issue
+   kep.k8s.io/1287 → labels show sig/node + stage
+
+4  Find it in release notes
+   relnotes.k8s.io → filter v1.35 + sig-node
+
+kep.yaml:
+  owning-sig:     sig-node
+  alpha:          v1.27
+  beta:           v1.32
+  stable:         v1.35 (GA!)
+  feature-gate:   InPlacePodVerticalScaling
+  participating:  sig-autoscaling, sig-scheduling
+```
+
+**Michael:** In-Place Pod Resize — being able to change resource limits without restarting the pod — went GA in v1.35. Big deal. Here's how you trace it.
+
+Step one: Search the KEP table at kubernetes.dev/resources/keps. Step two: Every KEP has a kep.yaml that tells you the owning SIG, what version it hit each stage, and the feature gate name. Step three: kep.k8s.io/1287 — that shortcut takes you straight to the tracking issue. Step four: relnotes.k8s.io — filter by version and SIG to see exactly what shipped.
+
+Every major feature has a paper trail. The URL is predictable. The data is machine-readable.
+
+**Mumshad:** OK, so I can track features. But what if I find something broken?
+
+---
+
+### SCENE 7: "I Found a Bug"
+**Time: 1:30**
+**SLIDE:** File a Bug — exact steps with bot commands
+
+```
+FILE A BUG: THE EXACT STEPS
+
+1  Go to the issue template
+   github.com/kubernetes/kubernetes/issues/new/choose
+   → select Bug Report
+
+2  Fill the structured form
+   What happened? How to reproduce?
+   K8s version, runtime, OS
+
+3  Submit — bot labels automatically
+   kind/bug + needs-triage applied by @k8s-ci-robot (Prow)
+
+4  SIG picks it up
+   Triager comments /sig node → routes to the right team
+
+KEY BOT COMMANDS:
+  /sig node          Route to a SIG
+  /assign            Self-assign
+  /kind bug          Label as bug
+  /good-first-issue  Mark for newcomers
+  /lgtm + /approve   PR merge flow
+
+Full command ref: go.k8s.io/bot-commands
+⚠ Security bugs → kubernetes.io/security (NEVER public issues)
+```
+
+**Michael:** Go to the kubernetes/kubernetes repo, click "New Issue," and pick "Bug Report." There's a structured form — what happened, how to reproduce, your Kubernetes version. When you submit, the Prow bot automatically labels it.
+
+Then a SIG triager routes it. They comment `/sig node` and the bot assigns it to the right team. If you want to fix it yourself, comment `/assign` — it's yours.
+
+And here's the important one: if it's a security vulnerability, it **never** goes through public issues. Go to kubernetes.io/security. That's a private disclosure process.
+
+**Mumshad:** So the entire project runs on bot commands and structured processes?
+
+**Michael:** Exactly. And the full command reference is at go.k8s.io/bot-commands. It's all documented, all automatable.
+
+---
+
+### SCENE 8: "Half My Bookmarks Are Broken"
 **Time: 2:00**
 **SLIDE:** "What Changed in 2025"
 
@@ -196,7 +276,7 @@ And then there was the Slack scare. In June 2025, Salesforce threatened to downg
 
 ---
 
-### SCENE 7: "What Do I Actually Subscribe To?"
+### SCENE 9: "What Do I Actually Subscribe To?"
 **Time: 1:30**
 **SLIDE:** "The Non-Negotiable Five"
 
@@ -229,7 +309,7 @@ These five cover security, releases, and deprecations — the three things that 
 
 ---
 
-### SCENE 8: "I Don't Have Time For This"
+### SCENE 10: "I Don't Have Time For This"
 **Time: 1:30**
 **SLIDE:** "30 Minutes/Week" system + role filters
 
@@ -266,8 +346,8 @@ And the five subscriptions? Subscribe once. They come to you.
 
 ---
 
-### SCENE 9: "I Want to Contribute. Where Do I Start?"
-**Time: 2:30**
+### SCENE 11: "I Want to Contribute. Where Do I Start?"
+**Time: 2:00**
 **SLIDE:** "Your First Contribution" — 5-step path
 
 ```
@@ -290,6 +370,8 @@ YOUR FIRST CONTRIBUTION
    Release Team Shadow → watch #sig-release on Slack
    LFX Mentorship      → mentoring.cncf.io
    GSoC / Outreachy     → annual Kubernetes projects
+
+Find Josh Berkus — Red Hat's K8s Community Architect, co-chairs SIG ContribEx. Slack: jberkus
 ```
 
 **Mumshad:** *(genuinely interested)* What if I don't just want to follow along? What if I actually want to contribute?
@@ -298,33 +380,21 @@ YOUR FIRST CONTRIBUTION
 
 Step one: Join Slack. Right now. slack.k8s.io. Join #kubernetes-contributors, join #sig-contribex, and join the channel for whatever SIG interests you.
 
-Step two: The SIG Meet & Greet. It happens at every KubeCon. It's a lunch session in the Project Pavilion. You just walk up, find the table for a SIG you're curious about, and talk to people. It's happening this week — check the schedule.
+Step two: The SIG Meet & Greet. It happens at every KubeCon — it's a lunch session in the Project Pavilion. Just walk up. It's happening this week.
 
-Step three: Claim a good first issue. Go to go.k8s.io/good-first-issue. These are curated by the SIGs specifically for newcomers. Comment `/assign` and it's yours. Many of them come with a named mentor. And if you want to practice the mechanics first — the PR process, the CLA, the labels — there's a contributor playground at github.com/kubernetes-sigs/contributor-playground.
+Step three: Claim a good first issue. go.k8s.io/good-first-issue — comment `/assign` and it's yours. Practice the mechanics first at the contributor playground.
 
-Step four: Monthly New Contributor Orientation. Third Tuesday of every month. There's also a self-paced course at kubernetes.dev/docs/onboarding.
+Step four: Monthly New Contributor Orientation. Third Tuesday of every month. Self-paced course at kubernetes.dev/docs/onboarding.
 
-Step five: Structured programs. The Release Team Shadow program — watch #sig-release on Slack for the call. LFX Mentorship at mentoring.cncf.io — they ran 187 successful projects in 2025. And there's always GSoC and Outreachy.
+Step five: Structured programs — Release Team Shadow, LFX Mentorship at mentoring.cncf.io, GSoC, Outreachy.
 
-**Mumshad:** Is there someone who helps newcomers navigate all this?
+And find Josh Berkus — Red Hat's Kubernetes Community Architect, co-chairs SIG ContribEx. They build the onboarding infrastructure and curate those good first issues. Slack username: jberkus.
 
-**Michael:** Josh Berkus. He's Red Hat's Kubernetes Community Architect and co-chairs SIG Contributor Experience — SIG ContribEx. They're the ones who build the onboarding infrastructure, run the orientations, and curate the good first issues. If you meet him on Slack, his username is jberkus.
-
----
-
-### SCENE 10: "One More Thing — The Maintainer Summit"
-**Time: 1:00**
-*(No slide)*
-
-**Mumshad:** One more thing — I keep hearing about a "Contributor Summit." What is that?
-
-**Michael:** It's actually been renamed. It's the Maintainer Summit now. It happens the Sunday before co-located events. To attend, you need to be a CNCF project maintainer or a Kubernetes GitHub org member.
-
-The conversations that happen there flow directly into SIG meetings and Slack channels for the rest of the cycle. If you contribute long enough, you'll get there. But even without attending, you can follow the outcomes.
+One more thing — the old "Contributor Summit" is now the Maintainer Summit. Happens Sunday before co-located events. If you contribute long enough, you'll get there.
 
 ---
 
-### SCENE 11: Close + QR Code
+### SCENE 12: Close + QR Code
 **Time: 2:00**
 **SLIDE:** QR code + repo URL + key takeaways
 
@@ -370,18 +440,19 @@ Five: If you want to contribute, the path exists and it starts today.
 |-------|-------|------|
 | 1 | Setup / Hook | 1:30 |
 | 2 | Release cadence — "my cert is expiring?" | 2:00 |
-| 3 | 24 SIGs — "who runs Kubernetes?" | 2:30 |
-| 4 | TAGs vs SIGs | 1:30 |
-| 5 | KEP process — "how features ship" | 1:30 |
-| 6 | 2025 landscape shift — "half my bookmarks are broken" | 2:00 |
-| 7 | The Non-Negotiable Five — "what do I subscribe to?" | 1:30 |
-| 8 | 30 min/week system — "I don't have time" | 1:30 |
-| 9 | First contribution path — "I want to contribute" | 2:30 |
-| 10 | Maintainer Summit context | 1:00 |
-| 11 | Close + QR code | 2:00 |
-| | **TOTAL** | **19:30** |
+| 3 | 24 SIGs — "who runs Kubernetes?" | 2:00 |
+| 4 | TAGs vs SIGs (+ Security Slam) | 1:30 |
+| 5 | KEP process — "how features ship" | 1:00 |
+| 6 | Trace It: KEP-1287 — "show me the paper trail" | 1:30 |
+| 7 | File a Bug — "I found something broken" | 1:30 |
+| 8 | 2025 landscape shift — "half my bookmarks are broken" | 2:00 |
+| 9 | The Non-Negotiable Five — "what do I subscribe to?" | 1:30 |
+| 10 | 30 min/week system — "I don't have time" | 1:30 |
+| 11 | First contribution path — "I want to contribute" | 2:00 |
+| 12 | Close + QR code | 2:00 |
+| | **TOTAL** | **20:00** |
 
-**Buffer:** 30 seconds for audience reactions, laughter, Mumshad's timing adjustments.
+**Buffer:** Zero — tight 20 minutes. Mumshad controls pacing by adjusting follow-up questions.
 
 ---
 
@@ -389,7 +460,7 @@ Five: If you want to contribute, the path exists and it starts today.
 
 - No formal handoffs. Mumshad asks, Michael answers.
 - **Scene 1 → 2:** Mumshad explicitly sets up the role-play.
-- **Scene 9 → 11:** Mumshad drops character. "Alright, let's land this." Shifts to direct address.
+- **Scene 11 → 12:** Mumshad drops character. "Alright, let's land this." Shifts to direct address.
 - Michael stays in educator mode throughout.
 
 ---
@@ -397,16 +468,19 @@ Five: If you want to contribute, the path exists and it starts today.
 ## Speaker Prep Notes
 
 ### What Mumshad Needs to Prep
-1. The 8 questions (internalized, not memorized)
+1. The 10 questions (internalized, not memorized)
 2. Reactive energy — surprise, frustration, mirroring audience
 3. The close — drops character, drives audience to QR code
-4. Timing awareness — accelerate/decelerate by adjusting follow-ups
+4. Timing awareness — zero buffer, so pace control is critical. Accelerate/decelerate by adjusting follow-ups.
 
 ### What Michael Needs to Prep
 1. Facts cold: 24 SIGs, 5 TAGs, 7 Steering, 11 TOC, v1.35 Dec 17, v1.36 Apr 22, KubeWeekly died May 2025, Bluesky official
-2. Pivot lines that set up the next question
-3. Josh Berkus reference (delivered casually)
-4. SIG Meet & Greet — check kccnceu2026.sched.com morning-of for exact day/time/location
+2. KEP-1287 walkthrough (4 steps, smooth and confident)
+3. Bug filing flow + bot commands (`/sig`, `/assign`, `/kind bug`)
+4. Security Slam 2026 mention (through March 20)
+5. Pivot lines that set up the next question
+6. Josh Berkus reference (delivered casually)
+7. SIG Meet & Greet — check kccnceu2026.sched.com morning-of for exact day/time/location
 
 ---
 
