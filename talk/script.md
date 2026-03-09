@@ -408,7 +408,7 @@ github.com/peopleforrester/k8s-staying-current
 - All links from this talk, verified and maintained
 - Role-based subscription checklists
 - All 24 SIGs — names, Slack channels, meeting times
-- Governance reference (Steering, TOC, 5 TAGs, 12 WGs)
+- Governance reference (Steering, TOC, 5 TAGs, 11 WGs)
 - Tool guides (pluto, kubent, RSS setup)
 - "What Changed in 2025" summary
 - First contribution path with direct links
