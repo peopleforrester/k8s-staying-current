@@ -28,7 +28,7 @@ X/Twitter has been deprioritized by the Kubernetes project. The official account
 
 | Account | Handle |
 |---------|--------|
-| **Kubernetes** | @kuabornetesio |
+| **Kubernetes** | @kubernetesio |
 | **CNCF** | @CloudNativeFdn |
 
 **Note:** If you're following Kubernetes on X and wondering why it's quiet — that's intentional. The project moved to Bluesky.

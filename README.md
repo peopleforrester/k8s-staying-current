@@ -121,7 +121,7 @@ New features go through the **KEP (Kubernetes Enhancement Proposal)** process �
 
 > Full list with Slack channels, meetings, and leads: [`reference/all-24-sigs.md`](reference/all-24-sigs.md)
 
-**Governance at a glance:** 7-person Steering Committee · 11-person TOC · 5 CNCF TAGs · 12 Working Groups
+**Governance at a glance:** 7-person Steering Committee · 11-person TOC · 5 CNCF TAGs · 11 Working Groups
 
 > **SIGs vs TAGs:** SIGs own Kubernetes code and report to Steering. CNCF TAGs are advisory only and report to the TOC. They are not the same thing — the CNCF renamed theirs from "SIGs" to "TAGs" to fix the confusion.
 
