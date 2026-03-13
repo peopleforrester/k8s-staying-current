@@ -1,10 +1,10 @@
-# Every Channel You Need to Stay Current After Kubernetes Certification
+# How Kubernetes Actually Ships: An Educator's Guide to Core Releases, SIGs, and Staying Current
 
 [![KubeCon EU 2026](https://img.shields.io/badge/KubeCon_EU-Amsterdam_2026-326CE5?style=flat&logo=kubernetes&logoColor=white)](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/)
 [![Last Verified](https://img.shields.io/badge/verified-March_2026-brightgreen?style=flat)]()
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-> **KubeCon EU 2026 — Cloud Native Theatre — March 24, Amsterdam**
+> **KubeCon EU 2026 — Cloud Native Theater — Tuesday, March 24, 12:37–12:57 CET — Hall 1-5, Tram Zone**
 > Speakers: Mumshad Mannambeth & Michael Forrester ([KodeKloud](https://kodekloud.com))
 
 You passed your CKA. Congratulations. Now what?
@@ -63,7 +63,7 @@ These five subscriptions cover security, releases, and deprecations — the thre
 | **Once** | 5 min | Subscribe to the Non-Negotiable Five (above) |
 | **Weekly** | 20 min | Read LWKD + scan 1–2 SIG Slack channels for your role |
 | **Monthly** | 30 min | Wisdom of the Cloud + Kubernetes blog scan |
-| **Quarterly** | 1 hr | Run pluto + kubent + review upcoming release KEPs |
+| **Quarterly** | 1 hr | Run pluto + KubePug + review upcoming release KEPs |
 
 ### By Role
 
@@ -73,7 +73,7 @@ These five subscriptions cover security, releases, and deprecations — the thre
 | **Operators** | SIG Node, SIG Network, SIG Storage, SIG Auth | [`operator-checklist.md`](checklists/operator-checklist.md) |
 | **Architects** | SIG Architecture, CNCF TOC notes, Alpha-stage KEPs | [`architect-checklist.md`](checklists/architect-checklist.md) |
 
-> Tool guides: [`pluto`](tools/pluto-guide.md) | [`kubent`](tools/kubent-guide.md) | [`RSS setup`](tools/rss-setup.md)
+> Tool guides: [`pluto`](tools/pluto-guide.md) | [`kubent`](tools/kubent-guide.md) (+ KubePug alternative) | [`RSS setup`](tools/rss-setup.md)
 
 ---
 
@@ -139,7 +139,7 @@ If you're following guides written before 2025, many of your bookmarks are broke
 | Dead | **"Ship It"** podcast | Rebranded to "Fork Around and Find Out" |
 | Archived | Old CNCF TAG Slack channels | 8 TAGs became 5 (June 2025) |
 | Uncertain | **Kubernetes Slack** | Salesforce threatened downgrade Jun 2025, then cancelled. Still active. |
-| Moved | **Official social** | Bluesky is primary (@kubernetes.io). X/Twitter deprioritized. |
+| Moved | **Official social** | Bluesky is official (@kubernetes.io, listed before X). X/Twitter deprioritized. |
 | New | **Wisdom of the Cloud** | Replaced KubeWeekly. Monthly. [cncf.io/newsletter](https://cncf.io/newsletter) |
 | Current | **LWKD** | Still the best weekly digest. [lwkd.info](https://lwkd.info) |
 
@@ -151,9 +151,9 @@ If you're following guides written before 2025, many of your bookmarks are broke
 
 1. **Join Slack** — [slack.k8s.io](https://slack.k8s.io) → `#kubernetes-contributors` · `#sig-contribex` · your SIG's channel
 2. **SIG Meet & Greet** — Lunch session in the Project Pavilion at every KubeCon. Just walk up.
-3. **Claim a good first issue** — [go.k8s.io/good-first-issue](https://go.k8s.io/good-first-issue) → comment `/assign` and it's yours
+3. **Claim a good first issue** — [go.k8s.io/good-first-issue](https://go.k8s.io/good-first-issue) → comment `/assign` and it's yours. Explore CNCF-wide opportunities at [clotributor.dev](https://clotributor.dev)
 4. **New Contributor Orientation** — 3rd Tuesday of every month at [kubernetes.dev/docs/orientation/](https://kubernetes.dev/docs/orientation/)
-5. **Structured programs** — [LFX Mentorship](https://mentoring.cncf.io) (187 successful projects in 2025) · GSoC · Outreachy · Release Team Shadow
+5. **Structured programs** — [LFX Mentorship](https://mentoring.cncf.io) (187 projects in 2025, 25 alumni became maintainers) · [GSoC 2026](https://summerofcode.withgoogle.com) (apps open Mar 16–31) · Release Team Shadow
 
 > Practice first: [contributor-playground](https://github.com/kubernetes-sigs/contributor-playground)
 > Full guides: [`contributing/`](contributing/)
@@ -171,8 +171,14 @@ If you're following guides written before 2025, many of your bookmarks are broke
 | Slack channels | [`channels/slack-channels.md`](channels/slack-channels.md) | Key channels by role |
 | Mailing lists | [`channels/mailing-lists.md`](channels/mailing-lists.md) | Google Groups, SIG lists |
 | Deprecation scanning | [`tools/pluto-guide.md`](tools/pluto-guide.md) | Detect deprecated APIs in manifests |
-| Cluster scanning | [`tools/kubent-guide.md`](tools/kubent-guide.md) | Detect deprecations in live clusters |
+| Cluster scanning | [`tools/kubent-guide.md`](tools/kubent-guide.md) | Detect deprecations in live clusters (+ KubePug alternative) |
 | RSS setup | [`tools/rss-setup.md`](tools/rss-setup.md) | Feed readers and URLs |
+| Trace a feature | [`walkthroughs/trace-a-feature.md`](walkthroughs/trace-a-feature.md) | KEP-1287 walkthrough: name → kep.yaml → release notes |
+| File a bug | [`walkthroughs/file-a-bug.md`](walkthroughs/file-a-bug.md) | Full bug filing lifecycle with Prow bot commands |
+| Bot commands | [`walkthroughs/bot-commands-cheatsheet.md`](walkthroughs/bot-commands-cheatsheet.md) | /sig, /assign, /lgtm, /approve quick reference |
+| KEP URL patterns | [`walkthroughs/kep-url-patterns.md`](walkthroughs/kep-url-patterns.md) | kep.k8s.io shortcuts and URL construction |
+| CLotributor | [`contributing/clotributor-guide.md`](contributing/clotributor-guide.md) | Find CNCF contribution opportunities |
+| Landscape changes | [`what-changed-2025/2025-landscape-changes.md`](what-changed-2025/2025-landscape-changes.md) | What died, moved, and changed in 2025 |
 
 ---
 
@@ -193,8 +199,14 @@ If you're following guides written before 2025, many of your bookmarks are broke
 │
 ├── tools/
 │   ├── pluto-guide.md              Detect deprecated API versions
-│   ├── kubent-guide.md             Detect deprecations in running clusters
+│   ├── kubent-guide.md             Detect deprecations in running clusters (+ KubePug)
 │   └── rss-setup.md                RSS reader setup
+│
+├── walkthroughs/
+│   ├── trace-a-feature.md          KEP-1287: name → kep.yaml → release notes
+│   ├── file-a-bug.md               Full bug filing lifecycle with Prow
+│   ├── bot-commands-cheatsheet.md  /sig, /assign, /lgtm, /approve reference
+│   └── kep-url-patterns.md         kep.k8s.io shortcuts and URL construction
 │
 ├── channels/
 │   ├── essential-five.md           The 5 must-have subscriptions
@@ -206,8 +218,9 @@ If you're following guides written before 2025, many of your bookmarks are broke
 │
 ├── contributing/
 │   ├── first-contribution.md       Step-by-step path to your first PR
+│   ├── clotributor-guide.md        Find CNCF contribution opportunities
 │   ├── sig-meet-and-greet.md       KubeCon SIG sessions
-│   ├── mentorship-programs.md      LFX, GSoC, Outreachy
+│   ├── mentorship-programs.md      LFX, GSoC 2026, Release Team Shadow
 │   ├── new-contributor-orientation.md  Monthly sessions + self-paced course
 │   └── josh-berkus-and-contribex.md    SIG ContribEx and community connectors
 │

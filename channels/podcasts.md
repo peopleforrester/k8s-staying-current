@@ -6,15 +6,15 @@ Audio content for staying current with Kubernetes — what's active, what rebran
 
 ## Active Podcasts
 
-### Kubernetes Podcast (from Google)
+### Kubernetes Podcast (from Google) — Appears Ended
 
 - **URL:** [kubernetespodcast.com](https://kubernetespodcast.com)
 - **Format:** Interviews with Kubernetes and CNCF community members
-- **Cadence:** Roughly weekly (verify current status)
-- **What it covers:** Deep-dive interviews with SIG leads, project maintainers, and ecosystem contributors. Each episode typically covers Kubernetes news plus a focused interview.
-- **Why listen:** Direct access to the people building Kubernetes. Good for understanding the "why" behind changes.
+- **Status:** Last episode #264 published December 22, 2025. Apple Podcasts shows "2018–2025." No new episodes or announcements since. The podcast appears to have silently ended.
+- **What it covered:** Deep-dive interviews with SIG leads, project maintainers, and ecosystem contributors. Each episode covered Kubernetes news plus a focused interview.
+- **Historical value:** The back catalog remains excellent for understanding the "why" behind Kubernetes decisions.
 
-<!-- VERIFY WEEK-OF: Last confirmed episode was December 22, 2025. Check if new episodes have been published. -->
+<!-- VERIFY WEEK-OF: Last episode #264 was December 22, 2025. Apple shows "2018–2025." Confirm no new episodes. -->
 
 ### Fork Around and Find Out (FAFO)
 
@@ -47,6 +47,7 @@ Audio content for staying current with Kubernetes — what's active, what rebran
 | Podcast | Status | Replacement |
 |---------|--------|-------------|
 | **Ship It** | Rebranded | Fork Around and Find Out |
+| **Kubernetes Podcast** | Appears ended (last ep #264, Dec 22, 2025) | Back catalog still valuable |
 
 ---
 
@@ -55,6 +56,6 @@ Audio content for staying current with Kubernetes — what's active, what rebran
 Podcasts are best as a supplement, not a primary source. They provide context and perspective that written sources don't — but they're slower to consume.
 
 **Recommendation:**
-- Pick one podcast (Kubernetes Podcast or FAFO) and listen during commutes
+- Pick a podcast (FAFO or Cloud Native Live) and listen during commutes
 - Don't feel obligated to listen to every episode — scan titles and pick what's relevant to your role
 - Use podcasts for the "why" and "context" — use LWKD and the blog for the "what"

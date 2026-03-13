@@ -7,6 +7,9 @@ kubent scans running Kubernetes clusters for resources using deprecated API vers
 | **GitHub** | [github.com/doitintl/kube-no-trouble](https://github.com/doitintl/kube-no-trouble) |
 | **Version** | 0.7.3 (August 30, 2024) |
 | **License** | MIT |
+| **Status** | **Effectively unmaintained** — maintainer quit ([Issue #732](https://github.com/doitintl/kube-no-trouble/issues/732)). Only covers deprecations through v1.32. |
+
+> **Warning:** kubent has not been updated since August 2024. The primary maintainer stepped down. The deprecation database only covers through Kubernetes v1.32. For clusters running v1.33+, consider using [KubePug](#kubepug-alternative) instead.
 
 ---
 
@@ -112,16 +115,40 @@ jobs:
 
 ---
 
-## Pluto vs kubent
+## KubePug Alternative
 
-| | Pluto | kubent |
-|-|-------|--------|
-| **Best for** | CI/CD on static manifests | Live cluster auditing |
-| **CI exit codes** | Built-in (2=deprecated, 3=removed) | Opt-in (`-e`, code 200) |
-| **Helm scanning** | `detect-helm` command | Automatic via Helm secrets |
-| **GitHub Action** | Official action available | Install via script |
+**KubePug** is a kubectl plugin that checks for deprecated APIs using live API specs from the Kubernetes API server — not a static database.
 
-**Recommendation:** Use both. Pluto in CI to gate PRs. kubent against live clusters before upgrades.
+| | |
+|---|---|
+| **GitHub** | [github.com/kubepug/kubepug](https://github.com/kubepug/kubepug) |
+| **Install** | `kubectl krew install deprecations` |
+| **Advantage** | Uses live API specs — always up to date with the latest Kubernetes version |
+| **Best for** | Clusters running v1.33+ where kubent's database is outdated |
+
+```bash
+# Install via krew
+kubectl krew install deprecations
+
+# Run against current cluster
+kubectl deprecations --k8s-version=v1.36
+```
+
+KubePug is a good replacement for kubent's live cluster scanning capability, especially for newer Kubernetes versions.
+
+---
+
+## Pluto vs kubent vs KubePug
+
+| | Pluto | kubent | KubePug |
+|-|-------|--------|---------|
+| **Best for** | CI/CD on static manifests | Live cluster auditing | Live cluster auditing |
+| **Data source** | Built-in database (actively maintained) | Built-in database (stale after v1.32) | Live API specs (always current) |
+| **CI exit codes** | Built-in (2=deprecated, 3=removed) | Opt-in (`-e`, code 200) | Yes |
+| **Helm scanning** | `detect-helm` command | Automatic via Helm secrets | No |
+| **Maintenance** | Active (Fairwinds) | Unmaintained since Aug 2024 | Active |
+
+**Recommendation:** Use Pluto in CI to gate PRs on static manifests. Use KubePug (or kubent for clusters ≤v1.32) for live cluster auditing before upgrades.
 
 ---
 

@@ -6,9 +6,9 @@ Where to follow official Kubernetes and CNCF accounts — and which platforms ma
 
 ## Primary: Bluesky
 
-Bluesky is the official primary social channel for Kubernetes as of late 2025.
+Bluesky is an official Kubernetes social channel as of late 2025. The kubernetes.io community page lists it before X, and the homepage embeds a live Bluesky feed.
 
-**Evidence:** The v1.35 release blog post (December 2025) explicitly stated: *"Follow us on Bluesky @kubernetes.io"*
+**Evidence:** The v1.35 release blog post (December 2025) stated: *"Follow us on Bluesky @kubernetes.io."* Both Bluesky and X are listed on [kubernetes.io/community](https://kubernetes.io/community), with Bluesky appearing first.
 
 | Account | Handle | Link |
 |---------|--------|------|
@@ -16,9 +16,10 @@ Bluesky is the official primary social channel for Kubernetes as of late 2025.
 | **CNCF** | @cncf.io | [bsky.app/profile/cncf.io](https://bsky.app/profile/cncf.io) |
 
 ### Why Bluesky?
-- Official announcements land here first
+- Official announcements are posted here
 - Release announcements, security advisories, and community highlights
 - Active community engagement from SIG members and maintainers
+- **Note:** Bluesky is a young platform (~2 years old). For stability, also subscribe to the Kubernetes Blog RSS [`kubernetes.io/feed.xml`](https://kubernetes.io/feed.xml) as a fallback
 
 ---
 

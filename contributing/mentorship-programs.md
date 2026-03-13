@@ -12,7 +12,8 @@ The primary structured mentorship program for CNCF projects, including Kubernete
 
 ### Key facts
 - Ran **187 successful projects in 2025**
-- Multiple cohorts per year (typically 3 terms)
+- **25 mentee alumni have gone on to become CNCF project maintainers** — the mentorship-to-maintainer flywheel is real
+- Multiple cohorts per year (typically 3 terms; Term 1 2026 is running now)
 - Paid stipend for mentees
 - Projects span Kubernetes and the broader CNCF ecosystem
 - Each project has a defined scope, timeline, and named mentor
@@ -59,17 +60,17 @@ The Kubernetes Release Team accepts shadows — people who learn by working alon
 **URL:** [summerofcode.withgoogle.com](https://summerofcode.withgoogle.com)
 
 ### Key facts
-- Annual program (applications typically open in spring)
-- CNCF participates as a mentoring organization
+- Annual program — **CNCF is a GSoC 2026 mentoring organization**
+- **Contributor applications open March 16, close March 31, 2026** (during KubeCon EU week)
 - Kubernetes projects are regularly available
 - Paid stipend for accepted contributors
 - 12-week or 22-week project options
 
 ### How to apply
-- Check if CNCF/Kubernetes is a participating organization for the current year
+- CNCF is confirmed as a participating organization for GSoC 2026
 - Review proposed project ideas on the CNCF mentoring repository
 - Reach out to proposed mentors on Slack before applying
-- Submit a detailed proposal during the application window
+- Submit a detailed proposal during the application window (March 16–31, 2026)
 
 ---
 
@@ -77,14 +78,16 @@ The Kubernetes Release Team accepts shadows — people who learn by working alon
 
 **URL:** [outreachy.org](https://www.outreachy.org)
 
+> **Note:** CNCF is not currently active in Outreachy. The last CNCF participation was the December 2024–March 2025 cohort. Check the Outreachy website for current participating organizations.
+
 ### Key facts
 - Focuses on increasing diversity in open source
 - Two cohorts per year (May and December)
 - Paid internship ($7,000 stipend)
-- CNCF/Kubernetes regularly participates
+- CNCF/Kubernetes participated historically but is not currently active
 - Includes an initial contribution period before selection
 
-### How to apply
+### How to apply (when CNCF participates)
 - Check for Kubernetes/CNCF projects during the application period
 - Make initial contributions during the contribution period
 - Selected applicants work with mentors for 3 months
@@ -98,7 +101,7 @@ The Kubernetes Release Team accepts shadows — people who learn by working alon
 | **LFX Mentorship** | Anyone wanting structured CNCF contribution | 12 weeks, ~20 hrs/week | Yes |
 | **Release Team Shadow** | People who want to understand the release process | ~15 weeks, 5–10 hrs/week | No |
 | **GSoC** | Students or early-career developers | 12–22 weeks | Yes |
-| **Outreachy** | People from underrepresented groups in tech | 3 months | Yes |
+| **Outreachy** | People from underrepresented groups in tech | 3 months | Yes (when CNCF participates) |
 
 ---
 
