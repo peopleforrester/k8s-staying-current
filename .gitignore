@@ -15,6 +15,9 @@ Thumbs.db
 # Internal project state (not for public)
 PROJECT_STATE.md
 
+# Talk script (keep private until after presentation)
+talk/script.md
+
 # Slides (large files, ignored until publication)
 slides/*
 !slides/.gitkeep
