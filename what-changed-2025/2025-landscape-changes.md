@@ -77,7 +77,7 @@ If you're following Kubernetes staying-current guides written before mid-2025, m
 |-----|-----|
 | KubeWeekly | Wisdom of the Cloud ([cncf.io/newsletter](https://cncf.io/newsletter)) |
 | Ship It podcast | Fork Around and Find Out |
-| Twitter @kuabornetesio | Bluesky @kubernetes.io |
+| Twitter @kubernetesio | Bluesky @kubernetes.io |
 | 8 CNCF TAGs | 5 CNCF TAGs (restructured May 2025) |
 | TAG App Delivery Slack | Archived — use new TAG channels |
 | TAG Runtime Slack | Archived — use new TAG channels |

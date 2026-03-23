@@ -76,6 +76,7 @@ These five subscriptions cover security, releases, and deprecations — the thre
 | **Architects** | SIG Architecture, CNCF TOC notes, Alpha-stage KEPs | [`architect-checklist.md`](checklists/architect-checklist.md) |
 
 > Tool guides: [`pluto`](tools/pluto-guide.md) | [`kubent`](tools/kubent-guide.md) (+ KubePug alternative) | [`RSS setup`](tools/rss-setup.md)
+> Presentation deck: [`slides/`](slides/)
 
 ---
 
@@ -229,12 +230,12 @@ If you're following guides written before 2025, many of your bookmarks are broke
 ├── what-changed-2025/
 │   └── 2025-landscape-changes.md   What died, what moved, what replaced it
 │
-├── slides/                         Presentation slides (added post-talk)
-│
-├── talk/
-│   └── script.md                   Full talk script
+├── slides/
+│   └── k8s-staying-current-stage-deck-v14.pptx   Presentation deck (20 slides)
 │
 ├── CONTRIBUTING.md                 How to contribute to this repo
+├── LICENSE                         CC BY 4.0
+├── qr-code.png                    QR code → kodekloudhub repo
 └── README.md                       This file
 ```
 
