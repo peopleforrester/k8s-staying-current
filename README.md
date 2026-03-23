@@ -13,6 +13,8 @@ Kubernetes ships three releases a year. The version you studied for goes end-of-
 
 This repository is the companion resource for our KubeCon EU 2026 talk. Every link, tool, checklist, and reference we mentioned — verified, organized, and maintained.
 
+> **Disclaimer:** All content is current as of April 1, 2026. Kubernetes moves fast — SIG membership, release schedules, tool versions, and channel availability may have changed since this was last verified. Results may vary. If you spot something outdated, [open an issue](../../issues).
+
 ---
 
 > **Start here:** Just want the essentials?
@@ -254,4 +256,4 @@ Found a broken link? Have a resource to add? See [CONTRIBUTING.md](CONTRIBUTING.
 
 ---
 
-<sub>Last verified: March 2026. Content is reviewed before each KubeCon. Found something outdated? [Open an issue.](../../issues)</sub>
+<sub>Content current as of April 1, 2026. Results may vary. Found something outdated? [Open an issue.](../../issues)</sub>
