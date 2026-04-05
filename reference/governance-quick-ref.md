@@ -35,18 +35,18 @@ The technical governing body of the CNCF. Handles project acceptance and maturit
 | Name | Affiliation | Role | Term | Status |
 |------|-------------|------|------|--------|
 | Karena Angell | Red Hat | Chair | Mar 2025 – Mar 2027 | Active |
-| Kevin Wang | Huawei | Vice Chair | Feb 2024 – Feb 2026 | **VERIFY WEEK-OF** |
+| Kevin Wang | Huawei | Vice Chair | Feb 2024 – Feb 2026 | Holdover |
 | Alex Chircop | Google | Member | Mar 2025 – Mar 2027 | Active |
 | Chad Beaudin | Boeing | Member | Mar 2025 – Mar 2027 | Active |
-| Davanum Srinivas | NVIDIA | Member | Feb 2024 – Feb 2026 | **VERIFY WEEK-OF** |
-| Emily Fox | Red Hat | Member | Feb 2024 – Mar 2026 | **VERIFY WEEK-OF** |
+| Davanum Srinivas | NVIDIA | Member | Feb 2024 – Feb 2026 | Holdover |
+| Emily Fox | Red Hat | Member | Feb 2024 – Mar 2026 | Holdover |
 | Faseela K | Ericsson | Member | Mar 2025 – Mar 2027 | Active |
 | Jeremy Rickard | Microsoft | Member | Mar 2025 – Mar 2027 | Active |
-| Katie Gamanji | Apple | Member | Mar 2022 – Feb 2026 | **VERIFY WEEK-OF** |
-| Lin Sun | Solo.io | Member | Feb 2024 – Feb 2026 | **VERIFY WEEK-OF** |
-| Ricardo Rocha | CERN | Member | Feb 2024 – Feb 2026 | **VERIFY WEEK-OF** |
+| Katie Gamanji | Apple | Member | Mar 2022 – Feb 2026 | Holdover |
+| Lin Sun | Solo.io | Member | Feb 2024 – Feb 2026 | Holdover |
+| Ricardo Rocha | CERN | Member | Feb 2024 – Feb 2026 | Holdover |
 
-<!-- VERIFY WEEK-OF: 6 of 11 seats expire between Feb 4 and Mar 4, 2026. Check github.com/cncf/toc for updated membership. -->
+> **Note (April 2026):** Six seats had terms expire between Feb–Mar 2026. As of April 2026, no replacement elections have been announced — these members appear to be serving in holdover capacity. Check [github.com/cncf/toc](https://github.com/cncf/toc) for the latest membership.
 
 **GitHub:** [cncf/toc](https://github.com/cncf/toc)
 

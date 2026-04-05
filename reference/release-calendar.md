@@ -9,12 +9,12 @@ Kubernetes ships 3 releases per year on ~15-week cycles with 14 months of patch 
 | Version | Codename | Release Date | Active Support Ends | EOL (Maintenance) | Latest Patch |
 |---------|----------|-------------|--------------------|--------------------|--------------|
 | v1.32 | Penelope | Dec 11, 2024 | Dec 28, 2025 | **Feb 28, 2026** | 1.32.12 |
-| v1.33 | Octarine | Apr 23, 2025 | Apr 28, 2026 | Jun 28, 2026 | 1.33.8 |
-| v1.34 | Of Wind & Will | Aug 27, 2025 | Aug 27, 2026 | Oct 27, 2026 | 1.34.4 |
-| v1.35 | Timbernetes | Dec 17, 2025 | Dec 28, 2026 | Feb 28, 2027 | 1.35.1 |
+| v1.33 | Octarine | Apr 23, 2025 | Apr 28, 2026 | Jun 28, 2026 | 1.33.10 |
+| v1.34 | Of Wind & Will | Aug 27, 2025 | Aug 27, 2026 | Oct 27, 2026 | 1.34.6 |
+| v1.35 | Timbernetes | Dec 17, 2025 | Dec 28, 2026 | Feb 28, 2027 | 1.35.3 |
 | v1.36 | TBD | **Apr 22, 2026** (target) | ~Apr 2027 | ~Jun 2027 | — |
 
-<!-- VERIFY WEEK-OF: Check latest patch levels at kubernetes.io/releases/ -->
+<!-- Patch levels verified April 6, 2026 via kubernetes.io/releases/ -->
 
 ---
 
@@ -26,7 +26,7 @@ Each release receives approximately **14 months** of total support:
 
 Kubernetes maintains patches for the **3 most recent minor releases** (N, N-1, N-2).
 
-### Current Support Window (as of February 2026)
+### Current Support Window (as of April 2026)
 
 | Version | Status |
 |---------|--------|
@@ -56,7 +56,7 @@ When v1.36 ships (~April 22, 2026), v1.33 becomes the oldest supported version.
 
 All deadlines use "Anywhere on Earth" (AoE) time (UTC-12).
 
-<!-- VERIFY WEEK-OF: Code freeze is Mar 18. Confirm no schedule slips at kubernetes.dev/resources/release/ -->
+<!-- Code freeze confirmed March 18, 2026 as scheduled. v1.36 on track for April 22. -->
 
 ---
 

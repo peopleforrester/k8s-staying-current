@@ -34,9 +34,7 @@ No presentation. No slides. Just conversation.
 
 ## KubeCon EU 2026 (Amsterdam)
 
-<!-- VERIFY WEEK-OF: Check kccnceu2026.sched.com for exact day, time, and location -->
-
-The SIG Meet & Greet is expected during the lunch period in the Project Pavilion. Check [kccnceu2026.sched.com](https://kccnceu2026.sched.com) for the confirmed schedule.
+The SIG Meet & Greet took place **Wednesday, March 25, 2026** from **12:00–15:00 CET** in the **Europe Foyer** at RAI Amsterdam. It was a drop-in lunch session to meet SIG leads and learn how to get involved.
 
 ---
 

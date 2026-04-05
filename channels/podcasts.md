@@ -10,11 +10,9 @@ Audio content for staying current with Kubernetes — what's active, what rebran
 
 - **URL:** [kubernetespodcast.com](https://kubernetespodcast.com)
 - **Format:** Interviews with Kubernetes and CNCF community members
-- **Status:** Last episode #264 published December 22, 2025. Apple Podcasts shows "2018–2025." No new episodes or announcements since. The podcast appears to have silently ended.
+- **Status:** Ended. Last episode #264 published December 22, 2025. Apple Podcasts shows "2018–2025." No new episodes or announcements as of April 2026.
 - **What it covered:** Deep-dive interviews with SIG leads, project maintainers, and ecosystem contributors. Each episode covered Kubernetes news plus a focused interview.
 - **Historical value:** The back catalog remains excellent for understanding the "why" behind Kubernetes decisions.
-
-<!-- VERIFY WEEK-OF: Last episode #264 was December 22, 2025. Apple shows "2018–2025." Confirm no new episodes. -->
 
 ### Fork Around and Find Out (FAFO)
 
@@ -36,7 +34,7 @@ Audio content for staying current with Kubernetes — what's active, what rebran
 
 ### Cloud Native Live (CNCF)
 
-- **URL:** [youtube.com/@caborncf](https://www.youtube.com/@caborncf) (livestreams)
+- **URL:** [youtube.com/@cncf](https://www.youtube.com/@cncf) (livestreams)
 - **Format:** Live sessions with project maintainers, webinars, and demos
 - **Why it's relevant:** Not a traditional podcast, but CNCF's live content often features the same depth of discussion.
 
@@ -47,7 +45,7 @@ Audio content for staying current with Kubernetes — what's active, what rebran
 | Podcast | Status | Replacement |
 |---------|--------|-------------|
 | **Ship It** | Rebranded | Fork Around and Find Out |
-| **Kubernetes Podcast** | Appears ended (last ep #264, Dec 22, 2025) | Back catalog still valuable |
+| **Kubernetes Podcast** | Ended (last ep #264, Dec 22, 2025) | Back catalog still valuable |
 
 ---
 

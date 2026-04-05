@@ -64,10 +64,9 @@ If you're following Kubernetes staying-current guides written before mid-2025, m
 - **RSS:** [kubernetes.io/feed.xml](https://kubernetes.io/feed.xml)
 
 ### Kubernetes Podcast (from Google)
-- **Status:** Active but verify
+- **Status:** Ended
 - **URL:** [kubernetespodcast.com](https://kubernetespodcast.com)
-- **Note:** Last confirmed episode December 22, 2025
-<!-- VERIFY WEEK-OF: Check if new episodes have been published -->
+- **Note:** Last episode #264 published December 22, 2025. No new episodes or announcements as of April 2026. Back catalog remains valuable.
 
 ---
 
