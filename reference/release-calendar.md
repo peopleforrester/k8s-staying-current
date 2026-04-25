@@ -1,5 +1,7 @@
 # Kubernetes Release Calendar
 
+<!-- Verified: 2026-04-26 — see scripts/verify_repo.py and re-confirm against kubernetes.io/releases/ -->
+
 Kubernetes ships 3 releases per year on ~15-week cycles with 14 months of patch support per release.
 
 ---

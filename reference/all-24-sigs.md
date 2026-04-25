@@ -1,5 +1,7 @@
 # All 24 Kubernetes Special Interest Groups (SIGs)
 
+<!-- Verified: 2026-04-26 — see scripts/verify_repo.py and re-confirm against kubernetes/community/blob/master/sig-list.md -->
+
 Every SIG, with Slack channels, mailing lists, meeting schedules, and current chairs. Data sourced from [kubernetes/community sig-list.md](https://github.com/kubernetes/community/blob/master/sig-list.md).
 
 ---

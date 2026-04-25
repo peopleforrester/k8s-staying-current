@@ -1,5 +1,7 @@
 # Kubernetes & CNCF Governance Quick Reference
 
+<!-- Verified: 2026-04-26 — see scripts/verify_repo.py and re-confirm against github.com/cncf/toc and github.com/kubernetes/steering -->
+
 A quick reference for the governance bodies that run Kubernetes and the CNCF.
 
 ---
@@ -46,7 +48,7 @@ The technical governing body of the CNCF. Handles project acceptance and maturit
 | Lin Sun | Solo.io | Member | Feb 2024 – Feb 2026 | Holdover |
 | Ricardo Rocha | CERN | Member | Feb 2024 – Feb 2026 | Holdover |
 
-> **Note (April 2026):** Six seats had terms expire between Feb–Mar 2026. As of April 2026, no replacement elections have been announced — these members appear to be serving in holdover capacity. Check [github.com/cncf/toc](https://github.com/cncf/toc) for the latest membership.
+> **Note (verified April 26, 2026):** Six seats had terms expire between Feb–Mar 2026. As of late April 2026, no replacement elections have been announced — these members appear to be serving in holdover capacity. Check [github.com/cncf/toc](https://github.com/cncf/toc) and the [cncf-toc mailing list archive](https://lists.cncf.io/g/cncf-toc/topics) for the latest membership and any election outcomes.
 
 **GitHub:** [cncf/toc](https://github.com/cncf/toc)
 

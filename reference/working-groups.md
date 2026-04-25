@@ -1,5 +1,7 @@
 # Kubernetes Working Groups
 
+<!-- Verified: 2026-04-26 — see scripts/verify_repo.py and re-confirm against kubernetes/community/blob/master/sig-wg-lifecycle.md -->
+
 Working Groups (WGs) are time-bounded, cross-cutting groups that address issues spanning multiple SIGs. They don't own code or long-term artifacts — they produce recommendations and designs that SIGs then implement.
 
 **Current count:** 11 active Working Groups.
