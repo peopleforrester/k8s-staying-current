@@ -1,7 +1,7 @@
 # Contributing to k8s-staying-current
 
 This is the companion repository for the KubeCon EU 2026 talk:
-**"Every Channel You Need to Stay Current After Kubernetes Certification"**
+**"How Kubernetes Actually Ships: An Educator's Guide to Core Releases, SIGs, and Staying Current"**
 
 Speakers: Mumshad Mannambeth & Michael Forrester (KodeKloud)
 

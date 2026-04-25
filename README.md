@@ -1,7 +1,7 @@
 # How Kubernetes Actually Ships: An Educator's Guide to Core Releases, SIGs, and Staying Current
 
 [![KubeCon EU 2026](https://img.shields.io/badge/KubeCon_EU-Amsterdam_2026-326CE5?style=flat&logo=kubernetes&logoColor=white)](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/)
-[![Last Verified](https://img.shields.io/badge/verified-April_2026-brightgreen?style=flat)]()
+[![Last Verified](https://img.shields.io/badge/verified-April_26_2026-brightgreen?style=flat)]()
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 > **KubeCon EU 2026 — Cloud Native Theater — Tuesday, March 24, 12:37–12:57 CET — Hall 1-5, Tram Zone**
@@ -13,7 +13,7 @@ Kubernetes ships three releases a year. The version you studied for goes end-of-
 
 This repository is the companion resource for our KubeCon EU 2026 talk. Every link, tool, checklist, and reference we mentioned — verified, organized, and maintained.
 
-> **Disclaimer:** All content is current as of April 6, 2026. Kubernetes moves fast — SIG membership, release schedules, tool versions, and channel availability may have changed since this was last verified. Results may vary. If you spot something outdated, [open an issue](../../issues).
+> **Disclaimer:** All content is current as of April 26, 2026. Kubernetes moves fast — SIG membership, release schedules, tool versions, and channel availability may have changed since this was last verified. Results may vary. If you spot something outdated, [open an issue](../../issues).
 
 ---
 
@@ -84,7 +84,7 @@ These five subscriptions cover security, releases, and deprecations — the thre
 
 At KodeKloud, we've trained over a million students for Kubernetes certifications. The number one message we get after someone passes: *"I passed. Now what?"*
 
-Your certification is a snapshot. It proves you understood Kubernetes at one point in time. But Kubernetes doesn't stop moving. v1.32 went end-of-life on February 28, 2026. v1.35 shipped December 17, 2025. v1.36 is targeting April 22, 2026. If you're not actively keeping up, you're falling behind — and the gap compounds.
+Your certification is a snapshot. It proves you understood Kubernetes at one point in time. But Kubernetes doesn't stop moving. v1.32 went end-of-life on February 28, 2026. v1.35 shipped December 17, 2025. v1.36 (Haru) shipped April 22, 2026. If you're not actively keeping up, you're falling behind — and the gap compounds.
 
 The good news: you don't need to spend hours every week. You need a system, the right subscriptions, and a mental model for how the ecosystem is organized.
 
@@ -96,12 +96,13 @@ Kubernetes follows a predictable cadence: **3 releases per year**, each on rough
 
 | Version | Name | Release Date | EOL |
 |---------|------|-------------|-----|
+| v1.36 | Haru | Apr 22, 2026 | Jun 2027 |
 | v1.35 | Timbernetes | Dec 17, 2025 | Feb 2027 |
 | v1.34 | Of Wind & Will | Aug 2025 | Oct 2026 |
 | v1.33 | Octarine | Apr 2025 | Jun 2026 |
 | v1.32 | Penelope | Dec 2024 | **Feb 28, 2026 (EOL)** |
 
-**v1.36** code freeze: March 18, 2026. Target release: April 22, 2026.
+**v1.36 (Haru)** shipped April 22, 2026 — 70 enhancements (18 Stable, 25 Beta, 25 Alpha).
 
 Every release ships with a detailed blog post listing new features, deprecations, and removals. That blog post is worth more than any vendor webinar. Read it.
 
@@ -198,7 +199,7 @@ If you're following guides written before 2025, many of your bookmarks are broke
 │   ├── cncf-tags.md                The 5 restructured TAGs
 │   ├── governance-quick-ref.md     Steering, TOC, Governing Board
 │   ├── working-groups.md           Active Working Groups
-│   └── release-calendar.md         v1.32–v1.36 dates and support matrix
+│   └── release-calendar.md         v1.33–v1.36 (Haru) dates and support matrix
 │
 ├── tools/
 │   ├── pluto-guide.md              Detect deprecated API versions
@@ -257,4 +258,4 @@ Found a broken link? Have a resource to add? See [CONTRIBUTING.md](CONTRIBUTING.
 
 ---
 
-<sub>Content current as of April 6, 2026. Results may vary. Found something outdated? [Open an issue.](../../issues)</sub>
+<sub>Content current as of April 26, 2026. Results may vary. Found something outdated? [Open an issue.](../../issues)</sub>

@@ -18,8 +18,5 @@ PROJECT_STATE.md
 # Talk script (keep private until after presentation)
 talk/script.md
 
-# Slides
-!slides/*.pptx
-
 # Windows Zone.Identifier streams
 *:Zone.Identifier

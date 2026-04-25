@@ -32,9 +32,9 @@ If you're following Kubernetes staying-current guides written before mid-2025, m
 - **Current risk:** The dependency on Salesforce's goodwill is a known concern. No migration has been announced, but the conversation is ongoing.
 
 ### Social Media — Bluesky Is Official
-- **Status:** Bluesky is the primary official social channel
+- **Status:** Bluesky is an official social channel and is listed first on kubernetes.io/community. Both Bluesky and X are listed there.
 - **Evidence:** The v1.35 release blog post (December 2025) explicitly stated: "Follow us on Bluesky @kubernetes.io"
-- **X/Twitter:** Deprioritized. The official account still exists but is no longer the primary channel.
+- **X/Twitter:** Deprioritized. The official account still exists but is no longer where new announcements land first.
 - **Action:** Follow [@kubernetes.io on Bluesky](https://bsky.app/profile/kubernetes.io)
 
 ### Ingress NGINX

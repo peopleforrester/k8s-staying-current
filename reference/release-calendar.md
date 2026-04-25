@@ -8,13 +8,13 @@ Kubernetes ships 3 releases per year on ~15-week cycles with 14 months of patch 
 
 | Version | Codename | Release Date | Active Support Ends | EOL (Maintenance) | Latest Patch |
 |---------|----------|-------------|--------------------|--------------------|--------------|
-| v1.32 | Penelope | Dec 11, 2024 | Dec 28, 2025 | **Feb 28, 2026** | 1.32.12 |
+| v1.32 | Penelope | Dec 11, 2024 | Dec 28, 2025 | **Feb 28, 2026 (EOL)** | 1.32.12 |
 | v1.33 | Octarine | Apr 23, 2025 | Apr 28, 2026 | Jun 28, 2026 | 1.33.10 |
 | v1.34 | Of Wind & Will | Aug 27, 2025 | Aug 27, 2026 | Oct 27, 2026 | 1.34.6 |
 | v1.35 | Timbernetes | Dec 17, 2025 | Dec 28, 2026 | Feb 28, 2027 | 1.35.3 |
-| v1.36 | TBD | **Apr 22, 2026** (target) | ~Apr 2027 | ~Jun 2027 | — |
+| v1.36 | Haru | **Apr 22, 2026** | ~Apr 2027 | ~Jun 2027 | 1.36.0 |
 
-<!-- Patch levels verified April 6, 2026 via kubernetes.io/releases/ -->
+<!-- Patch levels verified April 26, 2026 via kubernetes.io/releases/. v1.36 (Haru) shipped on schedule April 22, 2026. -->
 
 ---
 
@@ -30,16 +30,18 @@ Kubernetes maintains patches for the **3 most recent minor releases** (N, N-1, N
 
 | Version | Status |
 |---------|--------|
-| v1.35 | Active support (current) |
+| v1.36 | Active support (current — shipped April 22, 2026) |
+| v1.35 | Active support |
 | v1.34 | Active support |
-| v1.33 | Active support |
-| v1.32 | Maintenance mode → **EOL Feb 28, 2026** |
+| v1.33 | Active support → moves to maintenance when v1.37 ships |
 
-When v1.36 ships (~April 22, 2026), v1.33 becomes the oldest supported version.
+v1.32 reached end-of-life on February 28, 2026 and is no longer supported. With v1.36 (Haru) shipped April 22, 2026, v1.33 is now the oldest supported minor version.
 
 ---
 
-## v1.36 Release Schedule
+## v1.36 Release Schedule (delivered)
+
+The v1.36 cycle ran 15 weeks from January 12 to April 22, 2026. All milestones landed on schedule.
 
 | Milestone | Date | Week |
 |-----------|------|------|
@@ -47,16 +49,16 @@ When v1.36 ships (~April 22, 2026), v1.33 becomes the oldest supported version.
 | Production Readiness Freeze | Feb 4–5, 2026 | 4 |
 | Enhancements Freeze | Feb 11–12, 2026 | 5 |
 | Feature Blog Freeze | Feb 26–27, 2026 | 7 |
-| **Code Freeze / Test Freeze** | **Mar 18–19, 2026** | **10** |
+| Code Freeze / Test Freeze | Mar 18–19, 2026 | 10 |
 | KubeCon EU 2026 (Amsterdam) | Mar 23–26, 2026 | 11 |
 | Docs Freeze | Apr 8–9, 2026 | 13 |
 | v1.36.0-rc.0 | Apr 8, 2026 | 13 |
 | v1.36.0-rc.1 | Apr 14, 2026 | 14 |
-| **v1.36.0 Release** | **Apr 22, 2026** | **15** |
+| **v1.36.0 (Haru) Release** | **Apr 22, 2026 ✓** | **15** |
 
-All deadlines use "Anywhere on Earth" (AoE) time (UTC-12).
+All deadlines used "Anywhere on Earth" (AoE) time (UTC-12).
 
-<!-- Code freeze confirmed March 18, 2026 as scheduled. v1.36 on track for April 22. -->
+<!-- v1.36 (Haru) shipped on April 22, 2026. 70 enhancements: 18 Stable, 25 Beta, 25 Alpha. Verified via kubernetes.io/blog/2026/04/22/kubernetes-v1-36-release/. -->
 
 ---
 

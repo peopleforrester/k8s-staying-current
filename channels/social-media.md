@@ -4,9 +4,9 @@ Where to follow official Kubernetes and CNCF accounts — and which platforms ma
 
 ---
 
-## Primary: Bluesky
+## Official: Bluesky
 
-Bluesky is an official Kubernetes social channel as of late 2025. The kubernetes.io community page lists it before X, and the homepage embeds a live Bluesky feed.
+Bluesky is an official Kubernetes social channel as of late 2025. The kubernetes.io community page lists it before X, and the homepage embeds a live Bluesky feed. Both Bluesky and X are listed on [kubernetes.io/community](https://kubernetes.io/community); Bluesky appears first.
 
 **Evidence:** The v1.35 release blog post (December 2025) stated: *"Follow us on Bluesky @kubernetes.io."* Both Bluesky and X are listed on [kubernetes.io/community](https://kubernetes.io/community), with Bluesky appearing first.
 
@@ -23,16 +23,16 @@ Bluesky is an official Kubernetes social channel as of late 2025. The kubernetes
 
 ---
 
-## Secondary: X (formerly Twitter)
+## Also Official: X (formerly Twitter)
 
-X/Twitter has been deprioritized by the Kubernetes project. The official accounts still exist but are no longer the primary channel.
+X/Twitter has been deprioritized by the Kubernetes project. The official accounts still exist but are no longer where new announcements land first.
 
 | Account | Handle |
 |---------|--------|
 | **Kubernetes** | @kubernetesio |
 | **CNCF** | @CloudNativeFdn |
 
-**Note:** If you're following Kubernetes on X and wondering why it's quiet — that's intentional. The project moved to Bluesky.
+**Note:** If you're following Kubernetes on X and wondering why it's quiet — that's intentional. New announcements land on Bluesky first.
 
 ---
 
@@ -63,7 +63,7 @@ Useful for professional networking and CNCF organizational announcements, but no
 
 | Platform | Status |
 |----------|--------|
-| **Bluesky** | Promoted to primary official channel |
+| **Bluesky** | Listed first on kubernetes.io/community as official channel |
 | **X/Twitter** | Deprioritized — accounts still exist but less active |
 | **LinkedIn** | Unchanged — organizational/professional content |
 | **YouTube** | Unchanged — recordings and live content |
