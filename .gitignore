@@ -15,8 +15,8 @@ Thumbs.db
 # Internal project state (not for public)
 PROJECT_STATE.md
 
-# Talk script (keep private until after presentation)
-talk/script.md
+# Talk scripts (private archive — see CLAUDE.md "Talk Archive Policy")
+talk/*.md
 
 # Windows Zone.Identifier streams
 *:Zone.Identifier

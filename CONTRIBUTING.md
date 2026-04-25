@@ -36,6 +36,10 @@ We welcome contributions that keep this resource accurate and useful for the Kub
 - Content unrelated to staying current with Kubernetes and CNCF
 - Changes without clear sourcing for factual claims
 
+## License
+
+This repository is licensed under [CC BY 4.0](LICENSE). By submitting a contribution, you agree that your work is licensed under CC BY 4.0 — you keep authorship credit, and others can reuse the contribution with attribution.
+
 ## Questions?
 
 Open an issue or reach out to the maintainers. Thanks for helping keep this resource current!
