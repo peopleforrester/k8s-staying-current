@@ -44,7 +44,12 @@ def v2_no_zone_identifier() -> Tuple[bool, str]:
 def v3_project_state_post_talk() -> Tuple[bool, str]:
     p = REPO / "PROJECT_STATE.md"
     if not p.exists():
-        return False, "PROJECT_STATE.md missing"
+        # PROJECT_STATE.md is gitignored (internal-only) and so is absent from any
+        # clean checkout — that is the expected public state, not a failure, as long
+        # as .gitignore still keeps it from being committed.
+        if "PROJECT_STATE.md" in _read(".gitignore"):
+            return True, "PROJECT_STATE.md absent (gitignored, local-only)"
+        return False, "PROJECT_STATE.md missing and not gitignored"
     text = p.read_text(encoding="utf-8")
     if "Pre-Talk Checklist" in text:
         return False, "PROJECT_STATE.md still contains pre-talk checklist"
@@ -198,10 +203,15 @@ def v17_talk_script_archived_or_ignored() -> Tuple[bool, str]:
     script_present = (REPO / "talk" / "script.md").exists()
     archive = list((REPO / "talk").glob("*-script.md"))
     gi = _read(".gitignore")
-    if script_present and "talk/script.md" not in gi and "talk/*.md" not in gi:
+    ignored = "talk/script.md" in gi or "talk/*.md" in gi
+    if script_present and not ignored:
         return False, "talk/script.md present but not gitignored or archived"
     if not script_present and not archive:
-        return False, "no talk script and no dated archive"
+        # Clean checkout: talk scripts are gitignored, so none appear in the tracked
+        # tree. That is correct provided the gitignore rule still protects them.
+        if ignored:
+            return True, "no tracked talk script; .gitignore protects talk/*.md"
+        return False, "no talk script, no archive, and no gitignore protection"
     return True, "talk script gitignored or archived"
 
 
