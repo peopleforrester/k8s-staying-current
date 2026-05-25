@@ -15,6 +15,7 @@ on:
 permissions:
   contents: read
   issues: write
+  pull-requests: write
 
 jobs:
   lychee:
@@ -32,10 +33,13 @@ jobs:
 
       - name: Install lychee
         run: |
+          echo "=== Installing lychee ===" && \
           curl -sL https://github.com/lycheeverse/lychee/releases/download/lychee-v0.18.1/lychee-x86_64-unknown-linux-musl.tar.gz \
-            | tar xz -C /usr/local/bin
+            | tar xz -C /usr/local/bin && \
+          lychee --version
 
       - name: Run lychee
+        id: lychee
         run: |
           lychee \
             --cache \
@@ -46,6 +50,25 @@ jobs:
             --max-retries 3 \
             --output ./lychee-out.md \
             './**/*.md'
+
+      - name: Post report on PR failure
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let body = '';
+            try {
+              body = fs.readFileSync('./lychee-out.md', 'utf8').trim();
+            } catch(e) {
+              body = '`lychee-out.md` was not created — lychee likely failed before writing output.';
+            }
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `## Lychee link-check output\n\n\`\`\`\n${body || '(empty)'}\n\`\`\``
+            });
 
       - name: Upload report
         if: always()
