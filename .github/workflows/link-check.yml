@@ -39,9 +39,9 @@ jobs:
             --max-cache-age 1d
             --no-progress
             --exclude-mail
-            --accept '200,206,301,302,403,429'
-            --exclude 'file:///.*issues$'
-            './**/*.md'
+            --accept 200,206,301,302,403,429
+            --exclude file:///.*issues$
+            ./**/*.md
           fail: true
           output: ./lychee-out.md
 
