@@ -20,3 +20,6 @@ talk/*.md
 
 # Windows Zone.Identifier streams
 *:Zone.Identifier
+
+# Lychee link-checker cache
+.lycheecache
