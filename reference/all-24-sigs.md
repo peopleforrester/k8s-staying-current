@@ -43,30 +43,30 @@ All SIGs have Google Group mailing lists. The naming pattern varies:
 
 | SIG | Mailing List |
 |-----|-------------|
-| API Machinery | [kubernetes-sig-api-machinery](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery) |
+| API Machinery | [kubernetes-sig-api-machinery](https://groups.google.com/g/kubernetes-sig-api-machinery) |
 | Apps | [sig-apps@kubernetes.io](https://groups.google.com/a/kubernetes.io/g/sig-apps) |
 | Architecture | [sig-architecture@kubernetes.io](https://groups.google.com/a/kubernetes.io/g/sig-architecture) |
-| Auth | [kubernetes-sig-auth](https://groups.google.com/forum/#!forum/kubernetes-sig-auth) |
-| Autoscaling | [kubernetes-sig-autoscaling](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling) |
+| Auth | [kubernetes-sig-auth](https://groups.google.com/g/kubernetes-sig-auth) |
+| Autoscaling | [kubernetes-sig-autoscaling](https://groups.google.com/g/kubernetes-sig-autoscaling) |
 | CLI | [sig-cli@kubernetes.io](https://groups.google.com/a/kubernetes.io/g/sig-cli) |
-| Cloud Provider | [kubernetes-sig-cloud-provider](https://groups.google.com/forum/#!forum/kubernetes-sig-cloud-provider) |
+| Cloud Provider | [kubernetes-sig-cloud-provider](https://groups.google.com/g/kubernetes-sig-cloud-provider) |
 | Cluster Lifecycle | [sig-cluster-lifecycle@kubernetes.io](https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle) |
-| Contributor Experience | [kubernetes-sig-contribex](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex) |
-| Docs | [kubernetes-sig-docs](https://groups.google.com/forum/#!forum/kubernetes-sig-docs) |
+| Contributor Experience | [kubernetes-sig-contribex](https://groups.google.com/g/kubernetes-sig-contribex) |
+| Docs | [kubernetes-sig-docs](https://groups.google.com/g/kubernetes-sig-docs) |
 | etcd | [etcd-dev](https://groups.google.com/g/etcd-dev) |
-| Instrumentation | [kubernetes-sig-instrumentation](https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation) |
+| Instrumentation | [kubernetes-sig-instrumentation](https://groups.google.com/g/kubernetes-sig-instrumentation) |
 | K8s Infra | [sig-k8s-infra@kubernetes.io](https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra) |
-| Multicluster | [kubernetes-sig-multicluster](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster) |
+| Multicluster | [kubernetes-sig-multicluster](https://groups.google.com/g/kubernetes-sig-multicluster) |
 | Network | [sig-network@kubernetes.io](https://groups.google.com/a/kubernetes.io/g/sig-network) |
 | Node | [sig-node@kubernetes.io](https://groups.google.com/a/kubernetes.io/g/sig-node) |
-| Release | [kubernetes-sig-release](https://groups.google.com/forum/#!forum/kubernetes-sig-release) |
-| Scalability | [kubernetes-sig-scale](https://groups.google.com/forum/#!forum/kubernetes-sig-scale) |
+| Release | [kubernetes-sig-release](https://groups.google.com/g/kubernetes-sig-release) |
+| Scalability | [kubernetes-sig-scale](https://groups.google.com/g/kubernetes-sig-scale) |
 | Scheduling | [sig-scheduling@kubernetes.io](https://groups.google.com/a/kubernetes.io/g/sig-scheduling) |
-| Security | [kubernetes-sig-security](https://groups.google.com/forum/#!forum/kubernetes-sig-security) |
+| Security | [kubernetes-sig-security](https://groups.google.com/g/kubernetes-sig-security) |
 | Storage | [sig-storage@kubernetes.io](https://groups.google.com/a/kubernetes.io/g/sig-storage) |
-| Testing | [kubernetes-sig-testing](https://groups.google.com/forum/#!forum/kubernetes-sig-testing) |
-| UI | [kubernetes-sig-ui](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) |
-| Windows | [kubernetes-sig-windows](https://groups.google.com/forum/#!forum/kubernetes-sig-windows) |
+| Testing | [kubernetes-sig-testing](https://groups.google.com/g/kubernetes-sig-testing) |
+| UI | [kubernetes-sig-ui](https://groups.google.com/g/kubernetes-sig-ui) |
+| Windows | [kubernetes-sig-windows](https://groups.google.com/g/kubernetes-sig-windows) |
 
 ---
 
