@@ -1,0 +1,3 @@
+# GitHub-relative links like ../../issues work in the GitHub UI but resolve to
+# non-existent file:// paths when lychee runs locally or in CI.
+exclude = ["file:///.*issues$"]
