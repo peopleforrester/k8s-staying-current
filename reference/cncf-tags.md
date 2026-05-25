@@ -51,7 +51,6 @@ In May 2025, the CNCF TOC restructured from 8 TAGs to 5. TAG App Delivery, TAG R
 | **Slack** | `#tag-operational-resilience` on [CNCF Slack](https://cloud-native.slack.com) |
 | **Mailing List** | cncf-tag-operational-resilience@lists.cncf.io |
 | **Meetings** | [LFX Calendar](https://zoom-lfx.platform.linuxfoundation.org/meetings/tag-operational-resilience?view=list) |
-| **YouTube** | [@TAGOperationalResilience](https://www.youtube.com/@TAGOperationalResilience) |
 
 Notable subproject: **Green Reviews** — evaluates CNCF project sustainability footprint and energy consumption.
 
