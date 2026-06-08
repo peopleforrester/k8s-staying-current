@@ -1,6 +1,6 @@
 # CNCF Technical Advisory Groups (TAGs)
 
-<!-- Verified: 2026-04-26 — see scripts/verify_repo.py and re-confirm against cncf.io/people/technical-advisory-groups/ -->
+<!-- Verified: 2026-06-08 — see scripts/verify_repo.py and re-confirm against cncf.io/people/technical-advisory-groups/ -->
 
 In May 2025, the CNCF TOC restructured from 8 TAGs to 5. TAG App Delivery, TAG Runtime, and TAG Environmental Sustainability no longer exist. Old Slack channels were archived in June 2025.
 

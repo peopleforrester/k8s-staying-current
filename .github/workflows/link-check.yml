@@ -14,11 +14,14 @@ on:
 
 permissions:
   contents: read
-  issues: write
 
 jobs:
   lychee:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,13 +34,10 @@ jobs:
           restore-keys: cache-lychee-
 
       - name: Install lychee
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
-          gh release download --repo lycheeverse/lychee \
-            --pattern 'lychee-x86_64-unknown-linux-musl.tar.gz' \
-            --dir /tmp/lychee-install
-          sudo tar xz -C /usr/local/bin -f /tmp/lychee-install/lychee-x86_64-unknown-linux-musl.tar.gz
+          LYCHEE_URL=$(curl -sSf https://api.github.com/repos/lycheeverse/lychee/releases/latest \
+            | jq -r '.assets[] | select(.name | test("x86_64-unknown-linux-musl\\.tar\\.gz$")) | .browser_download_url')
+          curl -sSfL "$LYCHEE_URL" | sudo tar xz -C /usr/local/bin
           lychee --version
 
       - name: Run lychee
@@ -54,6 +54,8 @@ jobs:
             --max-retries 3 \
             --output ./lychee-out.md \
             './**/*.md'
+        # 403: some sites (e.g. Google Groups) block automated agents but remain browser-accessible
+        # --insecure: kubernetes.io TLS cert fails verification on ubuntu-latest CI runner
 
       - name: Post report on PR failure
         if: failure() && github.event_name == 'pull_request'
@@ -65,13 +67,17 @@ jobs:
             try {
               body = fs.readFileSync('./lychee-out.md', 'utf8').trim();
             } catch(e) {
-              body = '`lychee-out.md` was not created — lychee likely failed before writing output.';
+              if (e.code === 'ENOENT') {
+                body = '`lychee-out.md` was not created — lychee likely failed before writing output.';
+              } else {
+                body = `Error reading lychee-out.md: ${e.message}`;
+              }
             }
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `## Lychee link-check output\n\n\`\`\`\n${body || '(empty)'}\n\`\`\``
+              body: `## Lychee link-check output\n\n<details><summary>Full report</summary>\n\n${body || '(empty)'}\n\n</details>`
             });
 
       - name: Upload report

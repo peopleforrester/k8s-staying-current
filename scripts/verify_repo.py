@@ -151,8 +151,8 @@ def v11_readme_deck_exists() -> Tuple[bool, str]:
 def v12_claude_md_substantive() -> Tuple[bool, str]:
     text = _read("CLAUDE.md")
     lines = [l for l in text.splitlines() if l.strip()]
-    if len(lines) < 15:
-        return False, f"CLAUDE.md has only {len(lines)} non-blank lines (< 15)"
+    if len(lines) < 28:
+        return False, f"CLAUDE.md has only {len(lines)} non-blank lines (< 28)"
     if not re.search(r"editorial|tone|factual|verified", text, re.IGNORECASE):
         return False, "CLAUDE.md missing editorial-standards content"
     return True, f"CLAUDE.md is substantive ({len(lines)} non-blank lines)"
@@ -160,7 +160,7 @@ def v12_claude_md_substantive() -> Tuple[bool, str]:
 
 def v13_reference_verified_stamps() -> Tuple[bool, str]:
     missing = []
-    for f in (REPO / "reference").glob("*.md"):
+    for f in (REPO / "reference").rglob("*.md"):
         text = f.read_text(encoding="utf-8")
         if not re.search(r"<!--\s*Verified:\s*\d{4}-\d{2}-\d{2}", text):
             missing.append(f.name)

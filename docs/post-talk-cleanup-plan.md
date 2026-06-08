@@ -45,7 +45,7 @@ Add `scripts/verify_repo.py` and `tests/test_verify_repo.py`.
 | V9  | `README.md` disclaimer date is within 30 days of `date.today()`           | #7 |
 | V10 | `.gitignore` does not contain the dead `!slides/*.pptx` line              | #9 |
 | V11 | Slide deck file referenced in `README.md` repo map exists on disk         | #4, #2 |
-| V12 | `CLAUDE.md` is not stub-length (>= 30 lines, mentions editorial standards)| #12 |
+| V12 | `CLAUDE.md` is not stub-length (>= 28 non-blank lines, mentions editorial standards)| #12 |
 | V13 | Each `reference/*.md` has a `<!-- Verified: YYYY-MM-DD -->` header        | #14 |
 | V14 | `.github/workflows/link-check.yml` exists                                 | #11 |
 | V15 | `.github/ISSUE_TEMPLATE/` has at least `broken-link.md` and `outdated-fact.md` | #19 |
