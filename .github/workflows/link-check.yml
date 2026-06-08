@@ -36,13 +36,18 @@ jobs:
       - name: Install lychee
         run: |
           set -euo pipefail
-          LYCHEE_VER=$(curl -sSf "https://api.github.com/repos/lycheeverse/lychee/releases/latest" \
-            | jq -r '.tag_name')
-          [ -n "$LYCHEE_VER" ] || { echo "Failed to resolve lychee version"; exit 1; }
-          echo "Installing lychee ${LYCHEE_VER}"
+          # Get browser_download_url directly to avoid constructing it from the tag name
+          # (lychee tags look like "lychee-v0.24.2" but the tarball filename uses "0.24.2")
+          LYCHEE_URL=$(curl -sSf "https://api.github.com/repos/lycheeverse/lychee/releases/latest" \
+            | jq -r '
+                .assets[]
+                | select(.name | test("x86_64-unknown-linux-musl\\.tar\\.gz$"))
+                | .browser_download_url
+              ' | head -1)
+          [ -n "$LYCHEE_URL" ] || { echo "Failed to find lychee download URL"; exit 1; }
+          echo "Downloading lychee from ${LYCHEE_URL}"
           TMP=$(mktemp -d)
-          curl -sSfL "https://github.com/lycheeverse/lychee/releases/download/${LYCHEE_VER}/lychee_${LYCHEE_VER#v}_x86_64-unknown-linux-musl.tar.gz" \
-            | tar xz -C "$TMP"
+          curl -sSfL "$LYCHEE_URL" | tar xz -C "$TMP"
           LYCHEE_BIN=$(find "$TMP" -name lychee -type f | head -1)
           [ -n "$LYCHEE_BIN" ] || { echo "lychee binary not found in archive"; ls "$TMP"; exit 1; }
           sudo install -m 755 "$LYCHEE_BIN" /usr/local/bin/lychee
