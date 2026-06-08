@@ -15,7 +15,6 @@ on:
 permissions:
   contents: read
   issues: write
-  pull-requests: write
 
 jobs:
   lychee:
@@ -32,16 +31,20 @@ jobs:
           restore-keys: cache-lychee-
 
       - name: Install lychee
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          echo "=== Installing lychee ===" && \
-          curl -sL https://github.com/lycheeverse/lychee/releases/download/lychee-v0.18.1/lychee-x86_64-unknown-linux-musl.tar.gz \
-            | tar xz -C /usr/local/bin && \
+          gh release download --repo lycheeverse/lychee \
+            --pattern 'lychee-x86_64-unknown-linux-musl.tar.gz' \
+            --dir /tmp/lychee-install
+          sudo tar xz -C /usr/local/bin -f /tmp/lychee-install/lychee-x86_64-unknown-linux-musl.tar.gz
           lychee --version
 
       - name: Run lychee
         id: lychee
         run: |
           lychee \
+            --config ./lychee.toml \
             --cache \
             --max-cache-age 1d \
             --no-progress \

@@ -1,7 +1,7 @@
 # How Kubernetes Actually Ships: An Educator's Guide to Core Releases, SIGs, and Staying Current
 
 [![KubeCon EU 2026](https://img.shields.io/badge/KubeCon_EU-Amsterdam_2026-326CE5?style=flat&logo=kubernetes&logoColor=white)](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/)
-[![Last Verified](https://img.shields.io/badge/verified-June_08_2026-brightgreen?style=flat)]()
+![Last Verified](https://img.shields.io/badge/verified-June_08_2026-brightgreen?style=flat)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 > **KubeCon EU 2026 — Cloud Native Theater — Tuesday, March 24, 12:37–12:57 CET — Hall 1-5, Tram Zone**

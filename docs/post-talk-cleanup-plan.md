@@ -42,7 +42,7 @@ Add `scripts/verify_repo.py` and `tests/test_verify_repo.py`.
 | V6  | `what-changed-2025/2025-landscape-changes.md` says "official" not "primary social channel" | #5 |
 | V7  | `reference/release-calendar.md` shows v1.36 as **released** (Apr 22 2026, "Haru"), not target | #8 |
 | V8  | `reference/release-calendar.md` "Current Support Window" shows v1.33 oldest, v1.32 EOL'd | #8 |
-| V9  | `README.md` disclaimer date is within 30 days of file mtime               | #7 |
+| V9  | `README.md` disclaimer date is within 30 days of `date.today()`           | #7 |
 | V10 | `.gitignore` does not contain the dead `!slides/*.pptx` line              | #9 |
 | V11 | Slide deck file referenced in `README.md` repo map exists on disk         | #4, #2 |
 | V12 | `CLAUDE.md` is not stub-length (>= 30 lines, mentions editorial standards)| #12 |
