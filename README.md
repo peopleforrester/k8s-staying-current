@@ -102,7 +102,7 @@ Kubernetes follows a predictable cadence: **3 releases per year**, each on rough
 | v1.33 | Octarine | Apr 2025 | Jun 2026 |
 | v1.32 | Penelope | Dec 2024 | **Feb 28, 2026 (EOL)** |
 
-**v1.36 (Haru)** shipped April 22, 2026 — 70 enhancements (18 Stable, 25 Beta, 25 Alpha).
+**v1.36 (Haru)** shipped April 22, 2026 — [70 enhancements (18 Stable, 25 Beta, 25 Alpha)](https://kubernetes.io/blog/2026/04/22/kubernetes-v1-36-release/).
 
 Every release ships with a detailed blog post listing new features, deprecations, and removals. That blog post is worth more than any vendor webinar. Read it.
 

@@ -161,9 +161,9 @@ def v12_claude_md_substantive() -> Tuple[bool, str]:
 def v13_reference_verified_stamps() -> Tuple[bool, str]:
     missing = []
     for f in (REPO / "reference").rglob("*.md"):
-        text = f.read_text(encoding="utf-8")
-        if not re.search(r"<!--\s*Verified:\s*\d{4}-\d{2}-\d{2}", text):
-            missing.append(f.name)
+        head = "\n".join(f.read_text(encoding="utf-8").splitlines()[:15])
+        if not re.search(r"<!--\s*Verified:\s*\d{4}-\d{2}-\d{2}\s+—\s+.+?-->", head):
+            missing.append(str(f.relative_to(REPO)))
     if missing:
         return False, f"reference files missing Verified stamp: {missing}"
     return True, "all reference/*.md files have Verified stamps"

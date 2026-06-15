@@ -15,6 +15,9 @@ on:
 permissions:
   contents: read
 
+env:
+  LYCHEE_VERSION: "0.24.2"  # bump intentionally after testing; avoids surprise breakage from upstream releases
+
 jobs:
   lychee:
     runs-on: ubuntu-latest
@@ -36,9 +39,9 @@ jobs:
       - name: Install lychee
         run: |
           set -euo pipefail
-          # Get browser_download_url directly to avoid constructing it from the tag name
+          # Get browser_download_url from the pinned release to avoid tag-to-filename mismatch
           # (lychee tags look like "lychee-v0.24.2" but the tarball filename uses "0.24.2")
-          LYCHEE_URL=$(curl -sSf "https://api.github.com/repos/lycheeverse/lychee/releases/latest" \
+          LYCHEE_URL=$(curl -sSf "https://api.github.com/repos/lycheeverse/lychee/releases/tags/lychee-v${LYCHEE_VERSION}" \
             | jq -r '
                 .assets[]
                 | select(.name | test("x86_64-unknown-linux-musl\\.tar\\.gz$"))
