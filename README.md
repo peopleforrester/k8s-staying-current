@@ -1,7 +1,7 @@
 # How Kubernetes Actually Ships: An Educator's Guide to Core Releases, SIGs, and Staying Current
 
 [![KubeCon EU 2026](https://img.shields.io/badge/KubeCon_EU-Amsterdam_2026-326CE5?style=flat&logo=kubernetes&logoColor=white)](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/)
-![Last Verified](https://img.shields.io/badge/verified-June_22_2026-brightgreen?style=flat)
+![Last Verified](https://img.shields.io/badge/verified-July_20_2026-brightgreen?style=flat)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 > **KubeCon EU 2026 — Cloud Native Theater — Tuesday, March 24, 12:37–12:57 CET — Hall 1-5, Tram Zone**
@@ -13,7 +13,7 @@ Kubernetes ships three releases a year. The version you studied for goes end-of-
 
 This repository is the companion resource for our KubeCon EU 2026 talk. Every link, tool, checklist, and reference we mentioned — verified, organized, and maintained.
 
-> **Disclaimer:** All content is current as of June 22, 2026. Kubernetes moves fast — SIG membership, release schedules, tool versions, and channel availability may have changed since this was last verified. Results may vary. If you spot something outdated, [open an issue](https://github.com/peopleforrester/k8s-staying-current/issues).
+> **Disclaimer:** All content is current as of July 20, 2026. Kubernetes moves fast — SIG membership, release schedules, tool versions, and channel availability may have changed since this was last verified. Results may vary. If you spot something outdated, [open an issue](https://github.com/peopleforrester/k8s-staying-current/issues).
 
 ---
 
@@ -258,4 +258,4 @@ Found a broken link? Have a resource to add? See [CONTRIBUTING.md](CONTRIBUTING.
 
 ---
 
-<sub>Content current as of June 22, 2026. Results may vary. Found something outdated? [Open an issue.](https://github.com/peopleforrester/k8s-staying-current/issues)</sub>
+<sub>Content current as of July 20, 2026. Results may vary. Found something outdated? [Open an issue.](https://github.com/peopleforrester/k8s-staying-current/issues)</sub>
