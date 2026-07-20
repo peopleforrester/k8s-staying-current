@@ -37,11 +37,13 @@ jobs:
           restore-keys: cache-lychee-
 
       - name: Install lychee
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           # Get browser_download_url from the pinned release to avoid tag-to-filename mismatch
           # (lychee tags look like "lychee-v0.24.2" but the tarball filename uses "0.24.2")
-          LYCHEE_URL=$(curl -sSf "https://api.github.com/repos/lycheeverse/lychee/releases/tags/lychee-v${LYCHEE_VERSION}" \
+          LYCHEE_URL=$(curl -sSf -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/lycheeverse/lychee/releases/tags/lychee-v${LYCHEE_VERSION}" \
             | jq -r '
                 .assets[]
                 | select(.name | test("x86_64-unknown-linux-musl\\.tar\\.gz$"))
@@ -103,6 +105,11 @@ jobs:
         with:
           name: lychee-report
           path: ./lychee-out.md
+
+      - name: Ensure lychee-out.md exists for issue creation
+        if: failure() && github.event_name == 'schedule'
+        run: |
+          [ -f ./lychee-out.md ] || echo "lychee did not produce output (it may have crashed before writing)" > ./lychee-out.md
 
       - name: Open issue on scheduled failure
         if: failure() && github.event_name == 'schedule'

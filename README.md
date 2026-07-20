@@ -96,7 +96,7 @@ Kubernetes follows a predictable cadence: **3 releases per year**, each on rough
 
 | Version | Name | Release Date | EOL |
 |---------|------|-------------|-----|
-| v1.36 | Haru | Apr 22, 2026 | Jun 2027 |
+| [v1.36](https://kubernetes.io/blog/2026/04/22/kubernetes-v1-36-release/) | Haru | Apr 22, 2026 | [Jun 28, 2027](https://kubernetes.io/releases/) |
 | v1.35 | Timbernetes | Dec 17, 2025 | Feb 2027 |
 | v1.34 | Of Wind & Will | Aug 2025 | Oct 2026 |
 | v1.33 | Octarine | Apr 2025 | Jun 2026 |
