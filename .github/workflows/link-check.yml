@@ -37,13 +37,14 @@ jobs:
           restore-keys: cache-lychee-
 
       - name: Install lychee
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           # Get browser_download_url from the pinned release to avoid tag-to-filename mismatch
           # (lychee tags look like "lychee-v0.24.2" but the tarball filename uses "0.24.2")
-          LYCHEE_URL=$(curl -sSf -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/lycheeverse/lychee/releases/tags/lychee-v${LYCHEE_VERSION}" \
+          # GITHUB_TOKEN is scoped only to this curl command, not exported to the lychee binary.
+          LYCHEE_URL=$(curl -sSf --connect-timeout 10 --max-time 30 \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/lycheeverse/lychee/releases/tags/lychee-v${LYCHEE_VERSION}" \
             | jq -r '
                 .assets[]
                 | select(.name | test("x86_64-unknown-linux-musl\\.tar\\.gz$"))
@@ -52,7 +53,10 @@ jobs:
           [ -n "$LYCHEE_URL" ] || { echo "Failed to find lychee download URL"; exit 1; }
           echo "Downloading lychee from ${LYCHEE_URL}"
           TMP=$(mktemp -d)
-          curl -sSfL "$LYCHEE_URL" | tar xz -C "$TMP"
+          LYCHEE_TGZ="$TMP/lychee.tar.gz"
+          curl -sSfL --connect-timeout 10 --max-time 120 --retry 3 --retry-delay 5 \
+            "$LYCHEE_URL" -o "$LYCHEE_TGZ"
+          tar xz -C "$TMP" -f "$LYCHEE_TGZ"
           LYCHEE_BIN=$(find "$TMP" -name lychee -type f | head -1)
           [ -n "$LYCHEE_BIN" ] || { echo "lychee binary not found in archive"; ls "$TMP"; exit 1; }
           sudo install -m 755 "$LYCHEE_BIN" /usr/local/bin/lychee
@@ -75,6 +79,11 @@ jobs:
             './**/*.md'
         # 403: some sites (e.g. Google Groups) block automated agents but remain browser-accessible
         # --insecure: kubernetes.io TLS cert fails verification on ubuntu-latest CI runner
+
+      - name: Ensure lychee-out.md exists
+        if: failure()
+        run: |
+          [ -f ./lychee-out.md ] || echo "lychee did not produce output (it may have crashed before writing)" > ./lychee-out.md
 
       - name: Post report on PR failure
         if: failure() && github.event_name == 'pull_request'
@@ -106,13 +115,8 @@ jobs:
           name: lychee-report
           path: ./lychee-out.md
 
-      - name: Ensure lychee-out.md exists for issue creation
-        if: failure() && github.event_name == 'schedule'
-        run: |
-          [ -f ./lychee-out.md ] || echo "lychee did not produce output (it may have crashed before writing)" > ./lychee-out.md
-
       - name: Open issue on scheduled failure
-        if: failure() && github.event_name == 'schedule'
+        if: failure() && github.event_name == 'schedule' && steps.lychee.outcome == 'failure'
         uses: peter-evans/create-issue-from-file@v5
         with:
           title: "Broken links detected (scheduled link-check)"
