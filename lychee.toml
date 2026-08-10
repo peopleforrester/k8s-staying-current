@@ -1,4 +1,12 @@
-# Safety net: relative paths like ../../issues resolve to non-existent file://
-# paths when lychee runs. The README now uses absolute GitHub URLs instead,
-# but this exclude prevents false positives if any relative issue links remain.
-exclude = ["file:///.*issues$"]
+# file:///.*issues$ — relative paths like ../../issues resolve to non-existent
+# file:// paths when lychee runs; absolute GitHub URLs are used instead, but
+# this exclude prevents false positives if any relative issue links remain.
+#
+# kubernetes.io — the CI runner cannot reliably reach kubernetes.io (connection
+# failures from the runner's IP; TLS issues were already worked around via
+# --insecure). kubernetes.io is an authoritative, stable domain; dead links
+# there are caught through the Verified-stamp manual verification process.
+exclude = [
+  "file:///.*issues$",
+  "https://kubernetes\\.io"
+]
